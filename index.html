@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vijay Shekhar Singh | 3D Portfolio Dashboard</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Canvas for 3D Particle Scene -->
+    <canvas class="webgl"></canvas>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+    <div class="custom-cursor-dot"></div>
+
+    <!-- Glowing Cyber Grid -->
+    <div class="cyber-grid"></div>
+
+    <!-- Navigation Header -->
+    <header class="navbar">
+        <div class="logo">
+            <span class="logo-text">VIJAY SINGH</span>
+            <span class="verification-badge" title="Verified IT Student & Builder">
+                <i class="fas fa-check-circle"></i>
+            </span>
+        </div>
+        <nav class="nav-links">
+            <a href="#about" class="nav-link active">About</a>
+            <a href="#education" class="nav-link">Education</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#interests" class="nav-link">Interests</a>
+            <a href="#tips" class="nav-link">Startup Tips</a>
+            <a href="#contact" class="nav-link btn-glow">Connect</a>
+        </nav>
+        <div class="status-indicator">
+            <span class="status-dot animate-pulse"></span>
+            <span class="status-text">2nd Year IT @ NiT</span>
+        </div>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="dashboard-container">
+        
+        <!-- SECTION 1: HERO & ABOUT -->
+        <section id="about" class="dashboard-section hero-section">
+            <div class="section-grid">
+                <div class="hero-info" data-aos="fade-right">
+                    <div class="badge-container">
+                        <span class="tag-badge status-hiring"><i class="fas fa-briefcase animate-pulse"></i> Open for Hiring</span>
+                        <span class="tag-badge"><i class="fas fa-graduation-cap"></i> 2nd Year IT Student</span>
+                        <span class="tag-badge"><i class="fas fa-lightbulb"></i> Startup-Minded</span>
+                    </div>
+                    <h1 class="hero-title">
+                        Vijay (Adarsh) <br><span class="gradient-text">Shekhar Singh</span>
+                        <span class="verification-badge-lg" title="Verified IT Student & Builder">
+                            <i class="fas fa-check-circle"></i>
+                        </span>
+                    </h1>
+                    <p class="hero-pronouns"><i class="fas fa-user-tag"></i> He/Him</p>
+                    <p class="hero-headline">
+                        2nd Year IT Student | Building User-Focused Apps | Startup‑Minded — DM me with your business/startup ideas
+                    </p>
+                    
+                    <div class="about-card glass-panel">
+                        <h3 class="panel-title"><i class="fas fa-terminal"></i> system_init.log</h3>
+                        <p class="about-text">
+                            I am a second-year Information Technology undergraduate at <strong>Narula Institute of Technology</strong>, passionately building a strong technical foundation and cultivating an entrepreneurial mindset. Proficient in <strong>C</strong> and actively developing skills in <strong>HTML</strong> and <strong>Java</strong>, I am committed to mastering Data Structures and Algorithms through systematic practice and competitive problem-solving.
+                        </p>
+                        <p class="about-text">
+                            Concurrently, I am exploring Deep Learning and core concepts of AI/ML to understand how intelligent systems can be leveraged to build impactful, user-centric products with real commercial potential. I aspire to bridge engineering proficiency with business acumen — from ideation to MVP development.
+                        </p>
+                    </div>
+
+                    <div class="cta-group">
+                        <a href="#contact" class="btn btn-primary">
+                            <span>Get in Touch</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </a>
+                        <a href="#projects" class="btn btn-secondary">
+                            <span>View Roadmap</span>
+                            <i class="fas fa-arrow-down"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-visual" data-aos="fade-left">
+                    <div class="avatar-3d-container glass-panel">
+                        <!-- Holographic scanner effect -->
+                        <div class="scanner-bar"></div>
+                        <div class="avatar-frame">
+                            <img src="./assets/profile_headshot.jpg" alt="Vijay Shekhar Singh" class="avatar-img">
+                            <div class="glow-ring-1"></div>
+                            <div class="glow-ring-2"></div>
+                        </div>
+                        <div class="interactive-overlay">
+                            <div class="tech-metric">
+                                <span class="metric-label">SYS_STATUS:</span>
+                                <span class="metric-val text-green">ONLINE</span>
+                            </div>
+                            <div class="tech-metric">
+                                <span class="metric-label">LOC:</span>
+                                <span class="metric-val">Kolkata, IN</span>
+                            </div>
+                            <div class="tech-metric">
+                                <span class="metric-label">LANG:</span>
+                                <span class="metric-val text-cyan">C, HTML, JAVA</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- NEW: Study & Hiring Status Card -->
+                    <div class="hiring-status-card glass-panel" data-aos="fade-left" data-aos-delay="100">
+                        <h4 class="panel-title"><i class="fas fa-user-check text-green"></i> Career & Study Status</h4>
+                        <div class="status-list">
+                            <div class="status-item">
+                                <span class="status-label">PRESENT:</span>
+                                <span class="status-val">B.Tech IT (2nd Year) @ NiT</span>
+                            </div>
+                            <div class="status-item">
+                                <span class="status-label">PAST:</span>
+                                <span class="status-val">12th Sci (MLSM) | 10th (RRPS)</span>
+                            </div>
+                            <div class="status-item">
+                                <span class="status-label">STATUS:</span>
+                                <span class="status-val text-green highlight-pulse"><i class="fas fa-circle-check"></i> Open for Internships & Projects</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: EDUCATION -->
+        <section id="education" class="dashboard-section">
+            <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Professional Academic Journey</h2>
+            <div class="timeline">
+                <!-- NIT -->
+                <div class="timeline-item glass-panel" data-aos="fade-up">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2026 - Present</div>
+                    <div class="timeline-content">
+                        <h3>Narula Institute of Technology (NiT)</h3>
+                        <p class="timeline-sub">B.Tech in Information Technology (Second Year)</p>
+                        <p class="timeline-desc">
+                            Building core foundations in computer science, software engineering, and analytical thinking. Actively learning Data Structures, Algorithms, Object-Oriented Programming (Java), and exploring artificial intelligence.
+                        </p>
+                        <div class="timeline-tags">
+                            <span>Information Technology</span>
+                            <span>B.Tech</span>
+                            <span>Algorithms</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MLSM -->
+                <div class="timeline-item glass-panel" data-aos="fade-up" data-aos-delay="100">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Completed</div>
+                    <div class="timeline-content">
+                        <h3>M.L.S.M College Darbhanga</h3>
+                        <p class="timeline-sub">Higher Secondary Education (12th Grade)</p>
+                        <p class="timeline-desc">
+                            Focused on Science (Physics, Chemistry, Mathematics) which fostered strong logical and analytical reasoning capabilities.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- RRPS -->
+                <div class="timeline-item glass-panel" data-aos="fade-up" data-aos-delay="200">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Completed</div>
+                    <div class="timeline-content">
+                        <h3>Ramashray Roy Public School</h3>
+                        <p class="timeline-sub">Secondary School Education (10th Grade)</p>
+                        <p class="timeline-desc">
+                            Formed core academic fundamentals, leading to a strong interest in technology, engineering, and programming.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: SKILLS -->
+        <section id="skills" class="dashboard-section">
+            <h2 class="section-title"><i class="fas fa-brain"></i> Skills & Core Capabilities</h2>
+            <div class="section-grid">
+                <div class="skills-sphere-container glass-panel">
+                    <div class="sphere-overlay">
+                        <span class="overlay-text"><i class="fas fa-arrows-spin"></i> Interactive 3D Sphere - Hover to Spin</span>
+                    </div>
+                    <!-- 3D Skills Canvas inside -->
+                    <canvas id="skills3dCanvas"></canvas>
+                </div>
+                
+                <div class="skills-list">
+                    <div class="skill-category glass-panel" data-aos="fade-up">
+                        <h4><i class="fas fa-code text-cyan"></i> Programming Languages</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">C Language <small>(Proficient)</small></span>
+                            <span class="skill-tag">Java <small>(Developing)</small></span>
+                            <span class="skill-tag">HTML5 <small>(Web Core)</small></span>
+                            <span class="skill-tag">JavaScript <small>(Core/Web)</small></span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category glass-panel" data-aos="fade-up" data-aos-delay="100">
+                        <h4><i class="fas fa-chess-knight text-purple"></i> Problem Solving & Algorithms</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Data Structures & Algorithms</span>
+                            <span class="skill-tag">Analytical Thinking</span>
+                            <span class="skill-tag">Competitive Problem Solving</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category glass-panel" data-aos="fade-up" data-aos-delay="200">
+                        <h4><i class="fas fa-lightbulb text-gold"></i> Business & Strategy</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Strategy</span>
+                            <span class="skill-tag">Product Management</span>
+                            <span class="skill-tag">Early-stage Prototyping</span>
+                            <span class="skill-tag">Business Ideation</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category glass-panel" data-aos="fade-up" data-aos-delay="300">
+                        <h4><i class="fas fa-chart-line text-green"></i> Exploring & Learning</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Deep Learning</span>
+                            <span class="skill-tag">Artificial Intelligence</span>
+                            <span class="skill-tag">Machine Learning</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: PROJECTS -->
+        <section id="projects" class="dashboard-section">
+            <h2 class="section-title"><i class="fas fa-project-diagram"></i> Project Roadmap & Vision</h2>
+            
+            <div class="projects-container">
+                <!-- Main Project Cards -->
+                <div class="project-card glass-panel" data-tilt>
+                    <div class="project-status">
+                        <span class="status-indicator-blue"></span>
+                        <span>ACTIVE / IN-PROGRESS</span>
+                    </div>
+                    <h3 class="project-title">App Development - Learning & Preparation Phase</h3>
+                    <p class="project-time"><i class="far fa-calendar-alt"></i> Jan 2026 – Present</p>
+                    <p class="project-association"><i class="fas fa-university"></i> Narula Institute of Technology (NiT)</p>
+                    
+                    <p class="project-text">
+                        Currently focusing on building strong programming fundamentals and learning web technologies (HTML, JavaScript, and planning CSS & C++) as a foundation for future application development.
+                    </p>
+                    <p class="project-text">
+                        This project represents a crucial preparation phase dedicated to creating robust, market-ready applications, developing practical problem-solving capabilities, and cultivating business-oriented startup thinking.
+                    </p>
+                    
+                    <div class="project-tags">
+                        <span>HTML</span>
+                        <span>JavaScript</span>
+                        <span>C Programming</span>
+                        <span>C++ (Planning)</span>
+                        <span>App Prototyping</span>
+                    </div>
+                </div>
+
+                <!-- Strategic Roadmap Card -->
+                <div class="project-card glass-panel tech-card">
+                    <div class="project-status">
+                        <span class="status-indicator-green"></span>
+                        <span>FUTURE GOALS</span>
+                    </div>
+                    <h3 class="project-title">Future Product Milestones</h3>
+                    <div class="roadmap-steps">
+                        <div class="roadmap-step">
+                            <div class="step-num">01</div>
+                            <div class="step-details">
+                                <h5>Build MVP Applications</h5>
+                                <p>Create simple, functional, user-focused web apps using HTML, Javascript, and CSS to solve campus or local problems.</p>
+                            </div>
+                        </div>
+                        <div class="roadmap-step">
+                            <div class="step-num">02</div>
+                            <div class="step-details">
+                                <h5>Integrate Intelligent Backend</h5>
+                                <p>Expand Java skills and apply AI/ML concepts (Deep Learning models) to power smart recommendations or features.</p>
+                            </div>
+                        </div>
+                        <div class="roadmap-step">
+                            <div class="step-num">03</div>
+                            <div class="step-details">
+                                <h5>Pitch and Commercialize</h5>
+                                <p>Formulate business strategies, validate user feedback, and iterate toward a market-viable startup product.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: STARTUP TIPS & TRICKS -->
+        <section id="tips" class="dashboard-section">
+            <h2 class="section-title"><i class="fas fa-lightbulb"></i> Startup Tips & Tricks</h2>
+            <div class="tips-grid">
+                <!-- Tip 1 -->
+                <div class="tip-card glass-panel" data-tilt>
+                    <div class="tip-num-badge">01</div>
+                    <h3 class="tip-title">Build MVPs, Not Masterpieces</h3>
+                    <p class="tip-summary">Click to expand details</p>
+                    <div class="tip-detail-content">
+                        <p>Focus on coding core functionality first. Validate your ideas with real users using basic HTML, CSS, and JS before investing months in designing complex backend servers or database infrastructures.</p>
+                        <span class="tip-category">Execution</span>
+                    </div>
+                </div>
+
+                <!-- Tip 2 -->
+                <div class="tip-card glass-panel" data-tilt>
+                    <div class="tip-num-badge">02</div>
+                    <h3 class="tip-title">Learn & Build in Public</h3>
+                    <p class="tip-summary">Click to expand details</p>
+                    <div class="tip-detail-content">
+                        <p>Document your programming and learning journey. Share screenshot updates, code learnings, and struggles on LinkedIn and GitHub. This naturally attracts co-founders, experienced mentors, and recruiters.</p>
+                        <span class="tip-category">Marketing</span>
+                    </div>
+                </div>
+
+                <!-- Tip 3 -->
+                <div class="tip-card glass-panel" data-tilt>
+                    <div class="tip-num-badge">03</div>
+                    <h3 class="tip-title">Fall in Love with the Problem</h3>
+                    <p class="tip-summary">Click to expand details</p>
+                    <div class="tip-detail-content">
+                        <p>Do not fall in love with your own code. Fall in love with the user's pain point. If users struggle to use your MVP, pivot quickly and adjust your product strategy according to feedback.</p>
+                        <span class="tip-category">Product Strategy</span>
+                    </div>
+                </div>
+
+                <!-- Tip 4 -->
+                <div class="tip-card glass-panel" data-tilt>
+                    <div class="tip-num-badge">04</div>
+                    <h3 class="tip-title">Talk to 10 Users Early</h3>
+                    <p class="tip-summary">Click to expand details</p>
+                    <div class="tip-detail-content">
+                        <p>Before coding a single feature, talk to at least 10 people in your target market. Verify if your solution solves a real, painful problem that they would actually care about or pay for.</p>
+                        <span class="tip-category">Validation</span>
+                    </div>
+                </div>
+
+                <!-- Tip 5 -->
+                <div class="tip-card glass-panel" data-tilt>
+                    <div class="tip-num-badge">05</div>
+                    <h3 class="tip-title">Focus on Distribution First</h3>
+                    <p class="tip-summary">Click to expand details</p>
+                    <div class="tip-detail-content">
+                        <p>A great technical product will fail if nobody knows it exists. Plan how you will reach your first 100 users. Focus on marketing channels, startup networks, and student groups from day one.</p>
+                        <span class="tip-category">Growth</span>
+                    </div>
+                </div>
+
+                <!-- Tip 6 -->
+                <div class="tip-card glass-panel" data-tilt>
+                    <div class="tip-num-badge">06</div>
+                    <h3 class="tip-title">Find Complementary Skills</h3>
+                    <p class="tip-summary">Click to expand details</p>
+                    <div class="tip-detail-content">
+                        <p>If you are the technical builder, find someone who excels at business, pitching, or design. A successful startup is a bridge between engineering excellence and commercial sales.</p>
+                        <span class="tip-category">Teamwork</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: INTERESTS -->
+        <section id="interests" class="dashboard-section">
+            <h2 class="section-title"><i class="fas fa-compass"></i> Focus Areas & Core Interests</h2>
+            <div class="interests-grid">
+                <!-- Interest 1 -->
+                <div class="interest-card glass-panel" data-aos="fade-up">
+                    <div class="interest-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Startups & Products</h3>
+                    <p>Early-stage ventures, business strategy, product-market fit, and bridging engineering with strong business models.</p>
+                </div>
+
+                <!-- Interest 2 -->
+                <div class="interest-card glass-panel" data-aos="fade-up" data-aos-delay="100">
+                    <div class="interest-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3>AI & Deep Learning</h3>
+                    <p>Understanding neural networks, model training, and building smart software integrations for impact.</p>
+                </div>
+
+                <!-- Interest 3 -->
+                <div class="interest-card glass-panel" data-aos="fade-up" data-aos-delay="200">
+                    <div class="interest-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>DSA & Problem Solving</h3>
+                    <p>Continuous development in logic, algorithm design, and clean code optimization using C and Java.</p>
+                </div>
+
+                <!-- Interest 4 -->
+                <div class="interest-card glass-panel" data-aos="fade-up" data-aos-delay="300">
+                    <div class="interest-icon">
+                        <i class="fas fa-users-viewfinder"></i>
+                    </div>
+                    <h3>User-Centric Design</h3>
+                    <p>Creating interfaces that look premium, feel responsive, and respect human psychology and usability standards.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: CONTACT -->
+        <section id="contact" class="dashboard-section contact-section">
+            <div class="section-grid">
+                <div class="contact-info" data-aos="fade-right">
+                    <h2 class="section-title"><i class="fas fa-handshake"></i> Let's Connect</h2>
+                    <p class="contact-pitch">
+                        If you are an entrepreneur, founder, mentor, or student working on a startup or product idea, I'd love to connect! Share your vision, let's discuss possibilities, and perhaps build something together in the near future.
+                    </p>
+                    <p class="contact-highlight">
+                        <i class="fas fa-quote-left"></i> Perhaps one message from you could be the beginning of a valuable connection and exciting possibilities ahead. I would be glad to hear your ideas and perspectives. <i class="fas fa-quote-right"></i>
+                    </p>
+                    
+                    <div class="social-links-container glass-panel">
+                        <a href="https://linkedin.com" target="_blank" class="social-link-item linkedin">
+                            <i class="fab fa-linkedin-in"></i>
+                            <span>LinkedIn Profile</span>
+                        </a>
+                        <a href="mailto:vssingh@nit.ac.in" class="social-link-item email">
+                            <i class="fas fa-envelope"></i>
+                            <span>Email Me</span>
+                        </a>
+                        <a href="https://github.com" target="_blank" class="social-link-item github">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contact-form-container glass-panel" data-aos="fade-left">
+                    <h3 class="form-title"><i class="fas fa-envelope-open-text text-cyan"></i> Direct Message</h3>
+                    <form id="contactForm" onsubmit="event.preventDefault(); alert('Message simulation sent! Connect with me via LinkedIn.');">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" required placeholder="e.g. John Doe">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" required placeholder="name@company.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Pitch / Idea / Message</label>
+                            <textarea id="message" rows="4" required placeholder="Hi Vijay, I have this exciting startup/project idea..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-full">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="dashboard-footer">
+        <p>&copy; 2026 Vijay Shekhar Singh. Built with HTML, CSS, Three.js & GSAP.</p>
+        <p class="footer-sub">Verified IT Student Dashboard</p>
+    </footer>
+
+    <!-- Three.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <!-- Custom JS -->
+    <script src="main.js"></script>
+</body>
+</html>
